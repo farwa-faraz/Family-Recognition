@@ -18,7 +18,7 @@ function snapshot()
 
 console.log('The ml5 version being used is:', ml5.version);
 
-Classify = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/U7EPU-xaz/ ', modelLoaded);
+Classify = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/U7EPU-xaz/model.json', modelLoaded);
 
 function modelLoaded()
 {
@@ -28,10 +28,10 @@ function modelLoaded()
 function identify()
 {
     image = document.getElementById("result_image");
-    Classify.classify(image, gotResult);
+    Classify.classify(image, gotResults);
 }
 
-function gotResult(error, result)
+function gotResults(error, result)
 {
     if (error) 
     {
